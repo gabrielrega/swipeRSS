@@ -5,6 +5,15 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    proxy: {
+      '/miniflux': {
+        target: process.env.VITE_MINIFLUX_URL,
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/miniflux/, ''),
+      },
+    },
+  },
   plugins: [
     react(),
     tailwindcss(),
@@ -27,4 +36,4 @@ export default defineConfig({
       }
     })
   ],
-}))
+})

@@ -1,7 +1,9 @@
 import axios from 'axios';
 import { differenceInDays, parseISO } from 'date-fns';
 
-const MINIFLUX_URL = import.meta.env.VITE_MINIFLUX_URL;
+const MINIFLUX_URL = import.meta.env.DEV
+  ? '/miniflux'
+  : import.meta.env.VITE_MINIFLUX_URL;
 const API_KEY = import.meta.env.VITE_MINIFLUX_API_KEY;
 
 const api = axios.create({
