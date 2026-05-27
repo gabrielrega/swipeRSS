@@ -27,5 +27,4 @@ export default defineConfig({
       }
     })
   ],
-  cacheDir: 'C:/Users/Gabriel/.gemini/tmp/swiperss/vite_cache',
-})
+}))
